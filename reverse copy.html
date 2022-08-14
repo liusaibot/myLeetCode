@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var reverse = (x) => {
+            if(x < 0) return -1 * reverse(-x);
+
+            const solution = x.toString().split('').reverse().join('');
+            return (solution > (Math.pow(2, 31) - 1)) ? 0 : solution;
+        };
+
+        var num = 1534236469;
+        var dum = -123;
+        var trum = 120;
+        var rum = 0
+
+        var result = reverse(dum);
+        console.log(result)
+    </script>
+</body>
+
+</html>

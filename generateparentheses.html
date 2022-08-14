@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+<h1>Generate Patentheses</h1>
+<h2>Difficulty: Medium</h2>
+<p>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.</p>
+
+<body>
+    <script type="text/javascript">
+        const generateParenthesis = (n) => {
+            const solution = [];
+
+            const generateCombo = (leftPCount, rightPcount, partial) => {
+                if(leftPCount > rightPcount) return;
+
+                if(!leftPCount && !rightPcount) solution.push(partial);
+
+                if(leftPCount > 0) generateCombo(leftPCount -1, rightPcount, partial + '(');
+                if(rightPcount > 0) generateCombo(leftPCount, rightPcount - 1, partial + ')');
+            }
+
+            generateCombo(n,n,''); 
+
+            return solution;
+        };
+
+        
+        console.log(generateParenthesis(3));
+
+    </script>
+</body>
+
+</html>

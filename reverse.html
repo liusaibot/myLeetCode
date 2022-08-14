@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var reverse = function (x) {
+            var isNegative = x < 0 ? true : false;
+            var result;
+            
+            // let res = x.toString().split("").reverse().join().replace(",","");
+            let res = x.toString().split("");
+            var rev = res.reverse().join("");
+            
+            var rem = isNegative == true ? 0 - parseInt(rev) : parseInt(rev);
+            if(rem > (Math.pow(2, 31) - 1) || rem < Math.pow(-2, 31)){
+                result = 0;
+                return result;
+            }
+            return rem;
+        };
+
+        var num = 1534236469;
+        var dum = -123;
+        var trum = 120;
+        var rum = 0
+
+        var result = reverse(num);
+        console.log(result)
+    </script>
+</body>
+
+</html>

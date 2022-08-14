@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>
+        LeetCode Solution - Two Sum
+    </title>
+</head>
+
+<body>
+    <h1>Two Sum</h1>
+    <h2>Difficulty: Easy</h2>
+    <p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+        You may assume that each input would have exactly one solution, and you may not use the same element twice.
+        
+        You can return the answer in any order.</p>
+    <script type="text/javascript">
+        var twoSum = function (nums, target) {
+            console.log(nums);
+            console.log(target);
+            let sum;
+            let result = Array();
+            nums.forEach((element, i) => {
+                nums.forEach((num, j) => {
+                    if (i != j) {
+                        sum = parseInt(element) + parseInt(num);
+                        if (sum == target) {
+                            let res = [i, j];
+                            result.push(res);
+                            return true;
+                        }
+                    }
+                })
+            });
+
+            return result[0];
+        }
+
+        let nums = [3, 3]
+        let target = 6;
+        let newSum = twoSum(nums, target);
+        console.log(newSum);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <h1>Number of Islands</h1>
+    <h2>Difficulty Medium</h2>
+
+    <script type="text/javascript">
+        const numIslands = (grid) => {
+            let countIslands = 0;
+
+            for (let rowIndex in grid) {
+                for (let colIndex in grid[rowIndex]) {
+                    if (grid[rowIndex][colIndex] === '1') {
+                         countIslands++; 
+                        terraform(parseInt(rowIndex), parseInt(colIndex), grid);
+                        }
+                }
+            }
+
+            return countIslands;
+
+
+        };
+
+        //convert stuff to water
+        const terraform = (rowIn, colIn, grid) => {
+
+            if(grid[rowIn] === undefined || grid[rowIn][colIn] === undefined || grid[rowIn][colIn] === '0') return;
+
+           grid[rowIn][colIn] = '0';
+           
+           terraform(rowIn+1, colIn, grid);
+           terraform(rowIn-1, colIn, grid);
+           terraform(rowIn, colIn+1, grid);
+           terraform(rowIn, colIn-1, grid);
+            
+        }
+
+        let gridOne = [
+            ["1", "1", "1", "1", "0"],
+            ["1", "1", "0", "1", "0"],
+            ["1", "1", "0", "0", "0"],
+            ["0", "0", "0", "0", "0"]
+        ];
+        let gridTwo = [
+            ["1", "1", "0", "0", "0"],
+            ["1", "1", "0", "0", "0"],
+            ["0", "0", "1", "0", "0"],
+            ["0", "0", "0", "1", "1"]
+        ];
+
+        var resultOne = numIslands(gridOne);
+        var resultTwo = numIslands(gridTwo);
+
+        console.log(resultOne);
+        console.log(resultTwo);
+
+    </script>
+</body>
+
+</html>

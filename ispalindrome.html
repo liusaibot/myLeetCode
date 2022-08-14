@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p>
+        Given an integer x, return true if x is palindrome integer.
+
+        An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123
+        is not.
+    </p>
+    <script type="text/javascript">
+        var isPalindrome = function (x) {
+            let isNegative = x < 0 ? true : false;
+            if(isNegative){
+                return false;
+            }
+
+            let res = x.toString().split("");
+            let rev = res.reverse().join("");
+
+            let isPal = x == rev ? true : false;
+
+            return isPal;
+
+        };
+
+        x = 1212;
+
+        console.log(isPalindrome(x));
+    </script>
+</body>
+
+</html>

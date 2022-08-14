@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <h1>LeetCode Solutions</h1>
+<ul>
+    <li>
+        <a href="twosum.html">Two Sum</a>
+    </li>
+    <li>
+        <a href="twosum-copy.html">Two Sum Copy</a>
+    </li>
+</ul>
+    
+</body>
+
+<script>
+
+const changeString = (n) => {
+    let arr = n.split('');
+
+    
+    for(let ch in arr){
+        if(arr[ch] == 'A') {
+            arr[ch] = n;
+            changeString(ch);
+        }
+        
+    }
+    return arr;
+}
+
+console.log(changeString("Ade"));
+
+</script>
+</html>

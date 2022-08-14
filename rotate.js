@@ -1,0 +1,21 @@
+var rotate = function(nums, k) {
+    var result = Array();
+    var prevPosition ;
+    var holder;
+
+    var length = nums.length;
+    for(var i = 0; i < k; i++){
+        prevPosition = nums[length - 1];
+        for(var j = 0; j < length; j++){
+            holder = nums[j];
+            nums[j] = prevPosition;
+            prevPosition = holder;
+        }
+    }
+    return nums;
+
+}
+
+nums = [-1,-100,3,99], k = 3;
+
+console.log(rotate(nums, k));

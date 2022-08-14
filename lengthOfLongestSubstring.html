@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var lengthOfLongestSubstring = function (s) {
+            let sl = s.length, maxL = start = newS = 0;
+            if (!sl) return 0;
+            for (let end = 0; end < sl; end++) {
+                // console.log(s.substring(start, end) + " " + s[end]);
+                // console.log();
+                if (s.substring(start, end).indexOf(s[end]) !== -1) {
+                    newS = s.indexOf(s[end], newS) + 1;
+                    start = Math.max(start, newS);
+                }
+                maxL = Math.max(maxL, end - start + 1);
+            }
+            return maxL;
+        };
+        // var lengthOfLongestSubstring = function (s) {
+        //     var resArray = Array();
+        //     var sArr = s.split("");
+        //     var prev = null;
+        //     var maxLength = 0;
+        //     sArr.forEach(element => {
+        //         // console.log(element);
+        //         if(element != prev){
+        //             resArray.push(element);
+        //             prev = element;
+
+        //             console.log(element + " : " + prev);
+        //         }
+        //     });
+        // sArr.foreach((element) => {
+        //     if(element !== prev){
+        //         element = prev;
+        //         resArray.push(element);
+        //     } 
+        //     // else {
+        //     //     // resArray = [];
+        //     // }
+        // });
+
+        //     return resArray;
+        // };
+
+        var one = "abcabcbb";
+        var two = "bbbbb";
+        var three = "pwwkew";
+        var four = "s";
+
+        var info = lengthOfLongestSubstring(one);
+        console.log(info);
+    </script>
+</body>
+
+</html>

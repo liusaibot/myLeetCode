@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title>Three Sum</title>
+</head>
+
+<body>
+    <h1>Three Sum</h1>
+
+    <script type="text/javascript">
+        var threeSum = function (nums) {
+            let result = Array();
+            let sum;
+            
+            nums.forEach((element, i) => {
+                nums.forEach((num, j) => {
+                    nums.forEach((n, k) => {
+                        if (i != j && i != k && j != k) {
+                            sum = parseInt(element) + parseInt(num) + parseInt(n);
+                            if (sum == 0) {
+                                let triplet = [element, num, n].sort(function (a, b) { return a - b });
+
+                                var hash = {};
+
+                                for (var m = 0; m < result.length; m++) {
+                                    hash[result[m]] = m;
+                                }
+                                
+                                if (hash.hasOwnProperty(triplet)) {
+                                    
+                                } else {
+                                    result.push(triplet);
+                                }
+
+                            }
+                        }
+                    })
+                })
+            });
+            return result;
+        };
+
+        let nums = [-1, 0, 1, 2, -1, -4]
+        let result = threeSum(nums);
+
+
+
+        // console.log(n);
+
+        console.log("Result: ", result);
+    </script>
+</body>
+
+</html>
